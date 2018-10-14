@@ -3,11 +3,17 @@ import json
 import time
 import turtle
 
+# Sleep...
+sleep = 60
+
 # Map
 screen = turtle.Screen()
-screen.setup(1440, 720)
-screen.setworldcoordinates(-360,-180,360, 180)
+screen.setup(1024, 512)
+screen.setworldcoordinates(-180,-90, 180, 90)
 screen.bgpic("world.png")
+
+# Set time stamp
+time_now = time.ctime()
 
 while True:
     # Query ISS API
@@ -28,6 +34,21 @@ while True:
     location.penup()
     location.goto( lon, lat)
     location.dot(5)
+    location.pendown()
+    location.penup()
     location.hideturtle()
 
-    time.sleep(30)
+    # Print date
+    location.goto(85,-85)
+    style = ('Arial', 12, 'bold')
+    location.color('lightgrey')
+    location.write(time_now, font=style)
+
+    # Update time stamp
+    time_now = time.ctime()
+
+    # Print date
+    location.color('red')
+    location.write(time_now, font=style)
+
+    time.sleep(sleep)
