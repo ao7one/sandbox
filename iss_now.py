@@ -4,10 +4,11 @@ import time
 import turtle
 
 # Sleep...
-sleep = 60
+sleep = 30
 
 # Map
 screen = turtle.Screen()
+screen.title("ISS Tracker")
 screen.setup(1600, 800)
 screen.setworldcoordinates(-180,-90, 180, 90)
 screen.bgpic("hd_world_1600.png")
@@ -46,6 +47,7 @@ while True:
 
     # Update time stamp
     time_now = time.ctime()
+    screen.title("ISS Tracker: " + time_now)
 
     # Print date
     location.color('red')
