@@ -8,9 +8,9 @@ sleep = 60
 
 # Map
 screen = turtle.Screen()
-screen.setup(1024, 512)
+screen.setup(1600, 800)
 screen.setworldcoordinates(-180,-90, 180, 90)
-screen.bgpic("world.png")
+screen.bgpic("hd_world_1600.png")
 
 # Set time stamp
 time_now = time.ctime()
@@ -41,7 +41,7 @@ while True:
     # Print date
     location.goto(85,-85)
     style = ('Arial', 12, 'bold')
-    location.color('lightgrey')
+    location.color('white')
     location.write(time_now, font=style)
 
     # Update time stamp
